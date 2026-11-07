@@ -74,6 +74,8 @@ Scores computed on different feature sets are not directly comparable. The point
 
 ## Streamlit app
 
+![Streamlit app](images/app_screenshot.png)
+
 The app (`app.py`) loads the saved model and lets you:
 
 - upload a CSV with the 24 interest columns of `dados/dados_mkt.csv` (`sexo`, `idade` and `numero_de_amigos` are optional and ignored by the model)
@@ -88,7 +90,7 @@ The app (`app.py`) loads the saved model and lets you:
 ├── app.py                    # Streamlit app
 ├── dados/
 │   └── dados_mkt.csv         # dataset
-├── images/                   # charts used in this README
+├── images/                   # charts and app screenshot used in this README
 ├── notebooks/
 │   ├── marketing_v2.ipynb    # current analysis: interests only
 │   ├── segmentation_v2.pkl   # model used by the app
