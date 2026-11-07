@@ -1,16 +1,14 @@
-import streamlit as st
-import pandas as pd
-import joblib
+from pathlib import Path
 
-encoder = joblib.load(
-    "/Users/samuelmacedo/Projetos/exercicios_ml/clustering/notebooks/encoder_sexo.pkl"
-)
-scaler = joblib.load(
-    "/Users/samuelmacedo/Projetos/exercicios_ml/clustering/notebooks/scaler.pkl"
-)
-kmeans = joblib.load(
-    "/Users/samuelmacedo/Projetos/exercicios_ml/clustering/notebooks/kmeans.pkl"
-)
+import joblib
+import pandas as pd
+import streamlit as st
+
+MODELS_DIR = Path(__file__).resolve().parent / "notebooks"
+
+encoder = joblib.load(MODELS_DIR / "encoder_sexo.pkl")
+scaler = joblib.load(MODELS_DIR / "scaler.pkl")
+kmeans = joblib.load(MODELS_DIR / "kmeans.pkl")
 
 
 st.title("Grupos de interesse para marketing")
@@ -42,9 +40,9 @@ if up_file is not None:
 
     st.write("""
                     ### Descrição dos Grupos:
-                    - **Grupo 0** é focado em um público jovem com forte interesse em moda, música e aparência.
-                    - **Grupo 1** está muito associado a esportes, especialmente futebol americano, basquete e atividades culturais como banda e rock.
-                    - **Grupo 2** é mais equilibrado, com interesses em música, dança, e moda.
+                    - **Grupo 0** reúne perfis femininos, com maior interesse em música, cabelo, dança e compras.
+                    - **Grupo 1** reúne perfis masculinos, voltados a esportes (futebol americano, basquete e beisebol), banda e rock, com pouco interesse em moda e compras.
+                    - **Grupo 2** reúne perfis de sexo não informado (NE), com perfil intermediário: próximo ao Grupo 0 em música, dança, cabelo e compras, porém com menor intensidade.
                 """)
     df = pd.read_csv(up_file)
     cluster = processar_prever(df)

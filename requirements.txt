@@ -10,11 +10,12 @@ cycler==0.12.1
 fonttools==4.68.0
 h11==0.16.0
 idna==3.20
+ipykernel==7.4.0
 itsdangerous==2.2.0
 Jinja2==3.1.6
 joblib==1.6.0
-jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
+jsonschema==4.26.0
 kiwisolver==1.5.1
 MarkupSafe==3.0.4
 matplotlib==3.11.2
@@ -34,6 +35,7 @@ requests==2.34.2
 rpds-py==2026.9.1
 scikit-learn==1.9.1
 scipy==1.18.1
+seaborn==0.13.2
 starlette==1.10.0
 streamlit==1.67.0
 threadpoolctl==3.8.0
